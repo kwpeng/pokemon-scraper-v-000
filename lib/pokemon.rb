@@ -1,5 +1,7 @@
 class Pokemon
-  
+  @@all = []
+ 
+  def initialize(name, breed, age)
   
 end
 
