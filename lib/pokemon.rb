@@ -1,7 +1,8 @@
 class Pokemon
   @@all = []
  
-  def initialize(id, name, type, )
+  def initialize(id, name, type)
+    @id = id
     @name = name
     @type = type
     @@all << self
@@ -11,8 +12,8 @@ class Pokemon
     @@all
   end
   
-  def self.save(name, type, database_connection)
-    database_connection.execute("INSERT INTO pokemon (name, type) VALUES (?, ?)",name, type)
+  def self.save(id, name, type, database_connection)
+    database_connection.execute("INSERT INTO pokemon (id, name, type) VALUES (?, ?, ?)",name, type)
   end
  
 end
